@@ -239,3 +239,39 @@ div.desc {
 margin-left: 300px;
 margin-bottom: 150px;
 }
+
+
+/*myreservations*/
+
+#ticket-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket{
+  border: #AA96DA solid 1px;
+  display: flex;
+  padding: 15px;
+  border-radius: 20px;  
+  margin: 20px 0px;  
+}
+
+.ticket_details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  padding: 10px;
+}
+
+.ticket_details p{
+  text-align: start;
+}
+
+.tick_logo{
+  margin: 20px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
