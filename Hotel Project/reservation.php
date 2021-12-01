@@ -3,9 +3,9 @@
    //echo htmlspecialchars($_POST["visitor_name"]);
    
    $url = "localhost:3306";
-   $database = "****";
-   $username = "****";
-   $password = "*******";	
+   $database = "test";
+   $username = "noob";
+   $password = "7WBT]9yJXdQ77_sl";	
 
    $conn = mysqli_connect($url, $username, $password, $database);
    if(!$conn) {
@@ -24,7 +24,7 @@
 
    //echo $name . $mail . $phone . $adult . $children . $checkin . $checkout . $room . $comments;
 
-   $sql = "INSERT INTO reservations values (\"".$name. "\",\"". $mail ."\",". $phone .",". $adult .",". $children .",\"". $checkin ."\",\"". $checkout ."\",\"". $room ."\",\"". $comments ."\")";
+   $sql = "INSERT INTO reservations(name,email,phone,adults,children,checkin,checkout,room,comments) values (\"".$name. "\",\"". $mail ."\",". $phone .",". $adult .",". $children .",\"". $checkin ."\",\"". $checkout ."\",\"". $room ."\",\"". $comments ."\")";
 
    //echo $sql;
 

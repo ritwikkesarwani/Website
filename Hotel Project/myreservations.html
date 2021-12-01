@@ -162,8 +162,9 @@
                     <div class="ticket_details">
                         <h3>${myObj[i].name}</h3>                        
                         <p>From: ${myObj[i].checkin}   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To: ${myObj[i].checkout}</p>
-                        <p>Childrens: ${myObj[i].children}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Adults: ${myObj[i].adults}</p>
+                        <p>Childrens: ${myObj[i].children}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Adults: ${myObj[i].adults}</p>                        
                         <p>Type: ${myObj[i].room}</p>
+                        <button onClick="delreservation(${myObj[i].id})">Cancel</button>
                     </div>                    
                 </div>`;        
     }    
@@ -173,6 +174,25 @@
     }
     xmlhttp.open("GET", "myreservations.php");
     xmlhttp.send();
+
+    const delreservation = (e) => {        
+        console.log(e)        
+
+        var url = "delreservation.php";
+        var params = "Cancel="+e;
+        var http = new XMLHttpRequest();
+
+        http.open("GET", url+"?"+params, true);
+        http.onreadystatechange = function()
+        {
+            if(http.readyState == 4 && http.status == 200) {
+                //console.log(http.responseText);
+                window.location.reload()
+            }
+        }
+        http.send(null);
+    }
+
 </script>
 
 </html>
