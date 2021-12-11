@@ -164,7 +164,10 @@
                         <p>From: ${myObj[i].checkin}   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To: ${myObj[i].checkout}</p>
                         <p>Childrens: ${myObj[i].children}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Adults: ${myObj[i].adults}</p>                        
                         <p>Type: ${myObj[i].room}</p>
-                        <button onClick="delreservation(${myObj[i].id})">Cancel</button>
+                        <div class="del-upd">
+                            <button onClick="updreservation(${myObj[i].id})">Update</button>
+                            <button onClick="delreservation(${myObj[i].id})">Cancel</button>
+                        </div>
                     </div>                    
                 </div>`;        
     }    
@@ -191,6 +194,10 @@
             }
         }
         http.send(null);
+    }
+
+    const updreservation = (e) => {
+        window.location='updres.html?id='+e;
     }
 
 </script>

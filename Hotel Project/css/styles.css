@@ -275,3 +275,8 @@ margin-bottom: 150px;
   align-items: center;
 }
 
+.del-upd{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
